@@ -24,11 +24,12 @@ X_test <- read.table("~/UCI HAR Dataset/test/X_test.txt", header = FALSE)
 
 # add label / column names from features data frame 
 colnames(X_test) <- features$colname
-# add an additional column just for our reference to know the source whether it is training or test data when we merge into single data frame
-test_data["source"]<- "test"
 
 # now merge all these columns into a data frame to get final test data frame
 test_data <- cbind(subject_text,y_test,X_test)
+
+# add an additional column just for our reference to know the source whether it is training or test data when we merge into single data frame
+test_data["source"]<- "test"
 
 #-------------------- creating tidy test data ends here 
 
